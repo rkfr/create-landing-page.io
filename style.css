@@ -1,19 +1,37 @@
+/* 0. genera */
+/* 0.1 icons */
+/* 1. header */
+/* 1.1 header news line */
+/* 2. description */
+/* 3. persons slider */
+/* 4. article section */
+/* 5. news section */
+/* 6. footer */
+
+
+
+/* genera */
+
 *,
 *::before,
 *::after {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
+	color: #363636;
 	background: #fff;
+	font-size: 12px;
+	line-height: 20px;
+	font-style: normal;
 }
 
 a {
 	text-decoration: none;
 }
 
-.news-section__images-wrapper,
 .header__items-wrapper,
 .nav__container,
 .news-line__wrapper,
@@ -32,12 +50,6 @@ a {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-}
-
-.footer__form__text-input,
-.footer__description,
-.footer__copyright {
-	font-size: 12px;
 }
 
 .container,
@@ -65,54 +77,7 @@ a {
 	cursor: pointer;
 }
 
-/*header section*/
-
-.header-wrapper {
-	padding: 20px 0;
-	background: url(img/header_background.jpg) center center no-repeat;
-	background-size: cover;
-}
-
-.header {
-	display: block;
-	padding: 26px 0;
-	margin-bottom: 250px;
-	width: 100%;
-
-	background-color: #343434;
-}
-
-.header__items-wrapper {
-	justify-content: space-between;
-	align-items: center;
-}
-
-.header__logo {
-	display: block;
-	margin: 0;
-	padding: 0;
-}
-
-.header__nav {
-	/*margin-bottom: 250px;*/
-}
-
-.nav__container {
-	justify-content: space-between;	
-
-	list-style: none;
-}
-
-.nav__item {
-	margin: 0 15px;
-}
-
-.nav__item-link {
-	color: #e6e6e6;
-	padding: 5px 0;
-}
-
-/*---*/
+/* 0.1 icons */
 
 .social-icons__wrapper {
 	position: relative;
@@ -127,18 +92,74 @@ a {
 
 .social-icons__link {
 	display: block;
-
 	width: 50px;
 	height: 50px;
-	margin: 10px;
-	
+	margin: 10px;	
 	overflow: hidden;
 	border-radius: 50%;
 }
 
-/*===*/
+.facebook-icon {
+	background: #f26c4f url(img/icons/facebook.png) center center no-repeat;
+}
+
+.rss-icon {
+	background: #f26c4f url(img/icons/rss.png) center center no-repeat;
+}
+
+.twitter-icon {
+	background: #f26c4f url(img/icons/twitter.png) center center no-repeat;
+}
+
+/* 1. header */
+
+.header-wrapper {
+	padding: 20px 0;
+	background: url(img/header_background.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.header {
+	display: block;
+	padding: 26px 0;
+	margin-bottom: 250px;
+	width: 100%;
+	background-color: #343434;
+}
+
+.header__items-wrapper {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/*.header__nav {
+
+}*/
+
+.nav__container {
+	justify-content: space-between;	
+	list-style: none;
+}
+
+.nav__item {
+	margin: 0 15px;
+}
+
+.nav__item-link {
+	color: #e6e6e6;
+	padding: 5px 0;
+}
+
+/* 1.1 header news line */
 
 .header__news-line {
+	position: relative;
 	color: #fff;
 	background: #e4593a;
 	padding: 15px 0;
@@ -153,11 +174,27 @@ a {
 	display: block;
 }
 
+.news-line__title {
+	margin-right: 35px;
+	text-transform: uppercase;
+}
+
+.news-line__message {
+	margin-left: 18px;
+}
+
+.news-line__separator {
+	top: 0;
+	position: absolute;
+	font-size: 28px;
+	line-height: 50px;
+}
+
 .image-indicator {
 	margin-right: 15px;
 }
 
-/*end header*/
+/* 2. description */
 
 .description-area {
 	justify-content: space-between;
@@ -170,11 +207,29 @@ a {
 	margin-top: 40px;
 }
 
-.cite__header {
-	margin-bottom: 20px;
+.cite__header,
+.cite__top-article,
+.cite__bottom-article {
+	font-style: normal;
 }
 
-.cite__top-article {}
+.cite__header {
+	margin-bottom: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #272630;
+	text-transform: uppercase;
+}
+
+.cite__header span {
+	color: #f26c4f;
+}
+
+.cite__top-article {
+	font-size: 15px;
+	line-height: 25px;
+	color: #737373;
+}
 
 .cite__bottom-article {
 	margin: 35px 0 30px 0;
@@ -185,7 +240,6 @@ a {
 }
 
 .slider-button {
-
 	margin: 10px;
 	display: block;
 	position: relative;
@@ -199,14 +253,18 @@ a {
 }
 
 
-/*person slider*/
+/* 3. persons slider */
 
 .persons-slider-section {
 	justify-content: center;
 	align-items: stretch;
-
 	max-width: 1100px;
 	margin: 0 auto;
+}
+
+.persons-slider__card {
+	font-size: 12px;
+	text-align: center;
 }
 
 .persons-slider {
@@ -233,15 +291,21 @@ a {
 }
 
 .persons-slider__name {
-	margin-top: 23px;
-	margin-bottom: 17px;
+	margin: 23px 15px 17px 0;
+	color: #272630;
+	font-size: 12px;
+	text-transform: uppercase;
 }
 
-/*article section*/
+.persons-slider__description {
+	color: #363636;
+	font-style: italic;
+}
+
+/* 4. article section */
 
 .article-section {
 	justify-content: space-between;
-
 	padding: 32px 0 60px 0;
 }
 
@@ -250,7 +314,15 @@ a {
 }
 
 .article__title {
+	color: #272630;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
 	padding-bottom: 20px;
+}
+
+.article__title span {
+	color: #f26c4f;
 }
 
 .article__cite .paragraph-left:nth-child(2) {
@@ -262,7 +334,7 @@ a {
 	margin: 36px 0;
 }
 
-/*news section*/
+/* 5. news section */
 
 .news-section {
 	padding: 34px 0;
@@ -276,15 +348,18 @@ a {
 	padding-bottom: 40px;
 }
 
-/*.news-section-block {
+.news-section__images-wrapper,
+.news-section-block {
+	justify-content: space-between;
 }
 
-.news-section__images-wrapper {
-}*/
+.news__image-card {
+	width: 100%;
+	max-width: 305px;
+}
 
-.news-section-block,
-.news-section__images-wrapper {
-	justify-content: space-between;
+.news__image-card:last-child {
+	margin-left: 40px;
 }
 
 .news__image {
@@ -293,7 +368,19 @@ a {
 	max-width: 285px;
 	height: auto;
 	border: 10px solid #fbfbfc;
-	margin: 0 20px;
+}
+
+.news__image-title {
+	margin: 10px 0 13px 0;
+	color: #272630;
+	text-transform: uppercase;
+}
+
+.news__image-date {
+	font-size: 11px;
+	color: #aaaaaa;
+	font-style: italic;
+	margin-bottom: 5px;
 }
 
 /*end news section*/
@@ -303,7 +390,7 @@ a {
 	background: #fff;
 }
 
-/*footer*/
+/* 6. footer */
 
 .footer-wrapper {
 	background: #343434;
@@ -346,7 +433,11 @@ a {
 	padding: 17px 200px 17px 50px;
 	border-radius: 5px;
 	border: none;
+	color: #7c7c7c;
+}
 
+.footer__form__text-input::placeholder {
+	font-size: 12px;
 	color: #7c7c7c;
 }
 
@@ -355,8 +446,7 @@ a {
 	right: 10px;
 	border: none;
 	border-radius: 5px;
-	padding: 10px;
-	
+	padding: 10px;	
 	font-size: 14px;
 	color: #ca3c20;
 	background: #f27155;
@@ -379,20 +469,5 @@ a {
 .footer__copyright {
 	display: block;
 	margin-top: 35px;
-
 	color: #787878;
-}
-
-/*icons*/
-
-.facebook-icon {
-	background: #f26c4f url(img/icons/facebook.png) center center no-repeat;
-}
-
-.rss-icon {
-	background: #f26c4f url(img/icons/rss.png) center center no-repeat;
-}
-
-.twitter-icon {
-	background: #f26c4f url(img/icons/twitter.png) center center no-repeat;
 }
