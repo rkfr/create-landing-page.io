@@ -7,6 +7,7 @@
 /* 4. article section */
 /* 5. news section */
 /* 6. footer */
+/* 7. media */
 
 
 
@@ -341,6 +342,7 @@ a {
 }
 
 .news-section__news-wrapper {
+	padding-right: 10px;
 	max-width: 280px;
 }
 
@@ -408,6 +410,7 @@ a {
 .footer__description {
 	max-width: 450px;
 	margin-bottom: 25px;
+	padding-right: 15px;
 
 	color: #d6d6d6;
 }
@@ -470,4 +473,118 @@ a {
 	display: block;
 	margin-top: 35px;
 	color: #787878;
+}
+
+/* 7. media */
+
+@media screen and (max-width: 990px) {
+	
+	.header__items-wrapper,
+	.news-line__wrapper,
+	.description-area,
+	.persons-slider__description,
+	.article-section,
+	.news-section,
+	.footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.footer__form__text-input {
+		padding-right: 100px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+
+	.news-section-block {
+		display: block;
+	}
+
+	.news-section__news-wrapper  {
+		max-width: 100%;
+	}
+
+	.news-section__news-wrapper p:nth-child(2) {
+		padding-bottom: 15px;
+	}
+
+	.news-section__images-wrapper {
+		margin-top: 15px;
+	}
+
+	.news-line__separator {
+		display: none;
+	}
+
+	.news-line__title,
+	.news-line__message {
+		display: block;
+	}
+
+}
+
+@media screen and (max-width: 599px) {
+
+	.description-area {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cite__bottom-article {
+		margin: 15px 0;
+	}
+
+	.slider-buttons {
+		margin: 0 0 20px 0;
+	}
+
+	.persons-slider__card:nth-child(4n) {
+		display: none;
+	}
+
+	.footer__about {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-bottom: 15px;
+	}
+
+	.footer-icons {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 520px) {
+
+	.header__nav {
+		display: none;
+	}
+
+	.persons-slider__card:nth-child(2n) {
+		display: none;
+	}
+
+	.article-section {
+		display: block;
+	}
+
+	.article__cite-wrapper:first-child {
+		padding-right: 10px;
+		margin-bottom: 20px;
+	}
+
+	.news-section__images-wrapper {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.news__image-card:last-child {
+		margin-left: 0;
+	}
+
+	.news__image-card {
+		margin-bottom: 20px;
+	}
 }
