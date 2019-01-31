@@ -584,6 +584,7 @@ a {
 	}
 
 	.news__image-card {
+		text-align: center;
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
