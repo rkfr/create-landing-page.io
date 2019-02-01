@@ -267,6 +267,67 @@ a {
 	animation-iteration-count: infinite;
 }
 
+.slider-button:hover {
+	background: #F3E2A9;
+}
+
+/*switch articles*/
+
+@keyframes left-switch {
+
+	0% {
+		transform: translateX(0%);
+	}
+
+	40% {
+		 transform: translateX(-100%);
+		 opacity: 0;
+	}
+
+	50% {
+		transform: translateX(0%);
+		opacity: 0;
+	}
+
+	60% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	90% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes right-switch {
+
+	0% {
+		transform: translateX(0%);
+	}
+
+	40% {
+		 transform: translateX(100%);
+		 opacity: 0;
+	}
+
+	50% {
+		transform: translateX(0%);
+		opacity: 0;
+	}
+
+	60% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	90% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+
 
 
 /* 1. header */
@@ -450,10 +511,27 @@ a {
 	border-radius: 50%;
 	font-size: 48px;
 	color: #fff;
+	transition: .4s;
 	background: #e2e2e2;
 	width: 90px;
 	height: 90px;
 	border: none;
+}
+
+.slider-button:first-child::before {
+	content: '<';
+	position: absolute;
+	left: 35%;
+	top: 40%;
+	font-weight: 500;
+}
+
+.slider-button:last-child::before {
+	content: '>';
+	position: absolute;
+	right: 35%;
+	top: 40%;
+	font-weight: 500;
 }
 
 
