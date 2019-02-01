@@ -793,4 +793,9 @@ a {
 		align-items: center;
 		margin-bottom: 20px;
 	}
+
+	.current-news {
+		display: block;
+		min-height: 40px;
+	}
 }
