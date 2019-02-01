@@ -20,6 +20,9 @@
 
 
 
+/*font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;*/
+
 /* general */
 
 *,
@@ -36,12 +39,14 @@ body {
 	font-size: 12px;
 	line-height: 20px;
 	font-style: normal;
+	font-family: 'Roboto', sans-serif;
 }
 
 a {
 	text-decoration: none;
 }
 
+.image-indicator,
 .header__items-wrapper,
 .nav__container,
 .news-line__wrapper,
@@ -165,10 +170,6 @@ a {
 
 /* 0.3 hover */
 
-/*.header__logo {
-
-}*/
-
 @keyframes logo-hovered {
 	15% {
 		transform: translateX(9px);
@@ -235,6 +236,49 @@ a {
 }
 
 
+/*news*/
+
+.checked-point {
+	transition: all .4s;
+	transform: scale(1.1);
+	box-shadow: 0 0 0 3px #d74c2d;
+}
+
+@keyframes change-news {
+
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+/*	25% {
+		transform: translateX(0px);
+		opacity: 1;
+	}*/
+
+	50% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+/*	75% {
+		transform: translateX(0px);
+		opacity: 1;
+	}*/
+
+	100% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+.current-news {
+	animation: change-news 3.5s;
+	animation-iteration-count: infinite;
+}
+
+
+
 /* 1. header */
 
 .header-wrapper {
@@ -269,6 +313,7 @@ a {
 .nav__container {
 	justify-content: space-between;	
 	list-style: none;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .nav__item {
@@ -287,6 +332,7 @@ a {
 	color: #fff;
 	background: #e4593a;
 	padding: 15px 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .news-line__wrapper {
@@ -296,6 +342,7 @@ a {
 
 .news-line__text {
 	display: block;
+	overflow: hidden;
 }
 
 .news-line__title {
@@ -315,7 +362,33 @@ a {
 }
 
 .image-indicator {
+	flex-basis: 42px;
+	justify-content: space-around;
+	position: relative;
 	margin-right: 15px;
+	margin-left: 10px;
+}
+
+.image-indicator__point {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	padding: 3px;
+	background: #fff;
+	
+	border-radius: 50%;
+}
+
+.image-indicator__point:first-child {
+	left: 0;
+}
+
+.image-indicator__point:nth-child(2) {
+	left: 12px
+}
+
+.image-indicator__point:last-child {
+	left: 24px;
 }
 
 /* 2. description */
@@ -418,6 +491,7 @@ a {
 	margin: 23px 15px 17px 0;
 	color: #272630;
 	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 }
 
@@ -442,6 +516,7 @@ a {
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
 	padding-bottom: 20px;
 }
 
@@ -498,6 +573,7 @@ a {
 .news__image-title {
 	margin: 10px 0 13px 0;
 	color: #272630;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 }
 
