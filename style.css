@@ -251,20 +251,10 @@ a {
 		opacity: 0;
 	}
 
-/*	25% {
-		transform: translateX(0px);
-		opacity: 1;
-	}*/
-
 	50% {
 		transform: translateX(0%);
 		opacity: 1;
 	}
-
-/*	75% {
-		transform: translateX(0px);
-		opacity: 1;
-	}*/
 
 	100% {
 		transform: translateX(-100%);
@@ -767,6 +757,11 @@ a {
 	.news-line__text {
 		max-width: 325px;
 	}
+
+	.current-news {
+		display: block;
+		height: 60px;
+	}
 }
 
 @media screen and (min-width: 520px) {
@@ -861,11 +856,6 @@ a {
 		flex-direction: column;
 		align-items: center;
 		margin-bottom: 20px;
-	}
-
-	.current-news {
-		display: block;
-		min-height: 50px;
 	}
 
 	.image-indicator {
