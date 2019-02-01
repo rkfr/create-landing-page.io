@@ -11,9 +11,6 @@ menuButton.setAttribute('value', 'Menu');
 menuButton.classList.add('header__menu-low');
 menu.classList.add('header__menu__wrapper-low');
 
-
-	console.log(menuContainer);
-
 function createMenuItems(pointNames) {
 
 	for (let i = 0; i < pointNames.length; i++) {
@@ -36,22 +33,6 @@ menuButton.addEventListener('click', function() {
 })
 
 createMenuItems(pointNames);
-
-
-			// <!--  -->
-			// <input type="button">
-			// <nav>
-			// 	<ul>
-			// 		<li>
-			// 			<a href=""></a>
-			// 			<a href=""></a>
-			// 			<a href=""></a>
-			// 			<a href=""></a>
-			// 			<a href=""></a>
-			// 		</li>
-			// 	</ul>
-			// </nav>
-			// <!--  -->
 
 // news-line
 
