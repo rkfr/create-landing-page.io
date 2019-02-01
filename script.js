@@ -1,4 +1,58 @@
 
+// menu
+
+const menuContainer = document.querySelector('.header__items-wrapper'),
+	menuButton = document.createElement('input'),
+	menu = document.createElement('ul'),
+	pointNames = ['home', 'products', 'services', 'our work', 'contact'];
+
+menuButton.setAttribute('type', 'button');
+menuButton.setAttribute('value', 'Menu');
+menuButton.classList.add('header__menu-low');
+menu.classList.add('header__menu__wrapper-low');
+
+
+	console.log(menuContainer);
+
+function createMenuItems(pointNames) {
+
+	for (let i = 0; i < pointNames.length; i++) {
+		let menuItem = document.createElement('li'),
+			menuItemLink = document.createElement('a');
+			menuItemLink.setAttribute('href', '#');
+			menuItem.classList.add('menu__item-low');
+			menuItemLink.classList.add('menu__item__link-low');
+			menuItemLink.innerText = pointNames[i];
+			menuItem.append(menuItemLink);
+			menu.append(menuItem);
+	}
+}
+
+menuContainer.append(menuButton);
+menuContainer.append(menu);
+menuButton.addEventListener('click', function() {
+
+	menu.classList.toggle('menu-open');
+})
+
+createMenuItems(pointNames);
+
+
+			// <!--  -->
+			// <input type="button">
+			// <nav>
+			// 	<ul>
+			// 		<li>
+			// 			<a href=""></a>
+			// 			<a href=""></a>
+			// 			<a href=""></a>
+			// 			<a href=""></a>
+			// 			<a href=""></a>
+			// 		</li>
+			// 	</ul>
+			// </nav>
+			// <!--  -->
+
 // news-line
 
 let pointIndex = 0;
