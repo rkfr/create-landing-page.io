@@ -342,18 +342,22 @@ a {
 
 .news-line__text {
 	display: block;
+	overflow: hidden;
 }
 
 .news-line__title {
+	display: inline-block;
 	margin-right: 35px;
 	text-transform: uppercase;
 }
 
 .news-line__message {
+	display: inline-block;
 	margin-left: 18px;
 }
 
 .news-line__separator {
+	display: inline-block;
 	top: 0;
 	position: absolute;
 	font-size: 28px;
