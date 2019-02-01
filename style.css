@@ -796,6 +796,15 @@ a {
 
 	.current-news {
 		display: block;
-		min-height: 40px;
+		min-height: 50px;
+	}
+
+	.image-indicator {
+		position: absolute;
+		right: 25px;
+	}
+
+	.news-line__text {
+		max-width: 325px;
 	}
 }
