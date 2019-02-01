@@ -342,7 +342,6 @@ a {
 
 .news-line__text {
 	display: block;
-	overflow: hidden;
 }
 
 .news-line__title {
@@ -752,6 +751,10 @@ a {
 	.footer-icons {
 		justify-content: center;
 	}
+
+	.news-line__text {
+		max-width: 325px;
+	}
 }
 
 @media screen and (max-width: 520px) {
@@ -802,9 +805,5 @@ a {
 	.image-indicator {
 		position: absolute;
 		right: 25px;
-	}
-
-	.news-line__text {
-		max-width: 325px;
 	}
 }
