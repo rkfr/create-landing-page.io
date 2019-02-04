@@ -350,10 +350,12 @@ if (matchMedia) {
 
 function firstRenderCards(renderFunc, screenWidth) {
 
+	if (screenWidth == undefined)
+		renderFunc(cardsData, container, 0, 2);
+
 	let screen = screenWidth();
 	switch(screen) {
 		case 2: 
-		console.log(screen);
 		renderFunc(cardsData, container, 0, 2);
 		break;
 		case 3:
@@ -370,6 +372,7 @@ function firstRenderCards(renderFunc, screenWidth) {
 firstRenderCards(renderCards, getScreenWidth);
 
 function getScreenWidth() {
+
 	let width = document.documentElement.clientWidth,
 		amount = 0;
 
