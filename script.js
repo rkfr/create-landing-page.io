@@ -90,8 +90,7 @@ let i = 0;
 function changeCite(e) {
 
 	let ifElements = e.target.classList.contains('slider-button'),
-		target = e.target,
-		index = 0;
+		target = e.target;
 
 	if (!ifElements) {
 		return;
@@ -186,3 +185,199 @@ let arr = ['Cum sociis natoque penatibus et magnis dis parturient montes, nascet
 showNews(arr);
 
 // end news-line
+
+
+
+
+// person slider 
+
+
+const cardsData = [
+	{
+		imagePath: 'img/slider/previews/prew_1.jpg',
+		imageAlt: 'James Smith',
+		name: 'James Smith',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (1)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_2.jpg',
+		imageAlt: 'Bob Max',
+		name: 'Bob Max',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (2)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_3.jpg',
+		imageAlt: 'Blaz Robar',
+		name: 'Blaz Robar',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (3)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_4.jpg',
+		imageAlt: 'Jane Wally',
+		name: 'Jane Wally',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (4)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_1.jpg',
+		imageAlt: 'Lorem Ipsumov',
+		name: 'Lorem Ipsumov',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (5)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_3.jpg',
+		imageAlt: 'Bob Lorem',
+		name: 'Bob Lorem',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (6)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_2.jpg',
+		imageAlt: 'Ipsum Robar',
+		name: 'Ipsum Robar',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (7)'
+	},
+	{
+		imagePath: 'img/slider/previews/prew_4.jpg',
+		imageAlt: 'Jane Wally',
+		name: 'Jane Wally',
+		description: 'Quisque gravida felis eu massa consectetur at malesuada. (8)'
+	}
+];
+
+const container = document.getElementById('persons-container'),
+	personsSliderSection = document.querySelector('.persons-slider-section');
+
+let firstPerson = 0,
+	lastPerson = getScreenWidth(),
+	diff = lastPerson - firstPerson;
+
+function changeSlides(e) {
+
+	let target = e.target;
+
+	if (target.tagName !== 'INPUT')
+		return;
+
+	if (target.classList.contains('person-slider__button-left')){
+		firstPerson--;
+		lastPerson--;
+		if (firstPerson < 0) {
+			lastPerson = cardsData.length;
+			firstPerson = lastPerson - diff;
+		}	
+	}
+	else {
+		firstPerson++;
+		lastPerson++;
+		if (lastPerson > cardsData.length) {
+			firstPerson = 0;
+			lastPerson = diff;
+		}
+
+	}
+	container.classList.add('hide-show');
+	renderCards(cardsData, container, firstPerson, lastPerson);
+
+	setTimeout( () => container.classList.remove('hide-show'), 800);
+}
+
+personsSliderSection.addEventListener('click', changeSlides);
+
+function renderCards(data, parent, start, end) {
+	parent.innerText = '';
+
+	for (let i = start; i < end; i++) {
+		let card = document.createElement('div');
+			card.classList.add('persons-slider__card');
+
+		let {imagePath, imageAlt, name, description} = data[i];
+
+		let img = document.createElement('img'),
+			personName = document.createElement('h3'),
+			personAbout = document.createElement('p');
+
+		img.classList.add('persons-slider__photo');
+		img.setAttribute('src', imagePath);
+		img.setAttribute('alt', imageAlt);
+
+		personName.classList.add('persons-slider__name');
+		personName.innerText = name;
+
+		personAbout.classList.add('persons-slider__description');
+		personAbout.innerText = description;
+
+		card.append(img, personName, personAbout);
+
+		parent.append(card);
+	}
+}
+
+
+if (matchMedia) {
+
+	let maxW650 = window.matchMedia('(min-width: 670px)'),
+		maxW520 = window.matchMedia('(max-width: 520px)');
+
+	maxW650.addListener(function() {
+		if (maxW650.matches) {
+			firstPerson = 0;
+			lastPerson = 4;
+			diff = 4;
+			renderCards(cardsData, container, 0, 4);
+		}
+		else {
+			firstPerson = 0;
+			lastPerson = 3;
+			diff = 3;
+			renderCards(cardsData, container, 0, 3);
+		}
+	});
+
+	maxW520.addListener(function() {
+		if (maxW520.matches) {
+			firstPerson = 0;
+			lastPerson = 2;
+			diff = 2;
+			renderCards(cardsData, container, 0, 2);
+		}
+		else {
+			firstPerson = 0;
+			lastPerson = 3;
+			diff = 3;
+			renderCards(cardsData, container, 0, 3);
+		}
+	});
+}
+
+function firstRenderCards(renderFunc, screenWidth) {
+
+	let screen = screenWidth();
+	switch(screen) {
+		case 2: 
+		console.log(screen);
+		renderFunc(cardsData, container, 0, 2);
+		break;
+		case 3:
+		renderFunc(cardsData, container, 0, 3);
+		break;
+		case 4:
+		renderFunc(cardsData, container, 0, 4);
+		break;
+		default:
+		console.error('Error in firstRenderCards(), getScreenWidth() or renderCards');
+	}
+}
+
+firstRenderCards(renderCards, getScreenWidth);
+
+function getScreenWidth() {
+	let width = document.documentElement.clientWidth,
+		amount = 0;
+
+	if (width >= 670)
+		amount = 4;
+	if (width > 520 && width < 670)
+		amount = 3;
+	if (width <= 520)
+		amount = 2;
+	return amount;
+}
