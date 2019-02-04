@@ -327,7 +327,7 @@ a {
 	}
 }
 
-@keyframes hide-show {
+/*@keyframes hide-show {
 
 
 	40% {
@@ -337,7 +337,7 @@ a {
 
 .hide-show {
 	animation: hide-show 0.8s;
-}
+}*/
 
 
 .news__image:hover {
@@ -588,7 +588,7 @@ a {
 .persons-slider__photo {
 	display: block;
 	border-radius: 50%;
-	max-width: 213px;
+	max-width: 200px;
 	width: 100%;
 	height: auto;
 	transition: 0.3s ease;

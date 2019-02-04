@@ -274,10 +274,10 @@ function changeSlides(e) {
 		}
 
 	}
-	container.classList.add('hide-show');
+	// container.classList.add('hide-show');
 	renderCards(cardsData, container, firstPerson, lastPerson);
 
-	setTimeout( () => container.classList.remove('hide-show'), 800);
+	// setTimeout( () => container.classList.remove('hide-show'), 800);
 }
 
 personsSliderSection.addEventListener('click', changeSlides);
@@ -314,8 +314,8 @@ function renderCards(data, parent, start, end) {
 
 if (matchMedia) {
 
-	let maxW650 = window.matchMedia('(min-width: 670px)'),
-		maxW520 = window.matchMedia('(max-width: 520px)');
+	let maxW650 = window.matchMedia('screen and (min-width: 670px)'),
+		maxW520 = window.matchMedia('screen and (max-width: 520px)');
 
 	maxW650.addListener(function() {
 		if (maxW650.matches) {
