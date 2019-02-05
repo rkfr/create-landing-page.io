@@ -189,7 +189,7 @@ showNews(arr);
 
 
 
-// person slider 
+// persons slider 
 
 
 const cardsData = [
@@ -274,10 +274,8 @@ function changeSlides(e) {
 		}
 
 	}
-	// container.classList.add('hide-show');
 	renderCards(cardsData, container, firstPerson, lastPerson);
 
-	// setTimeout( () => container.classList.remove('hide-show'), 800);
 }
 
 personsSliderSection.addEventListener('click', changeSlides);
